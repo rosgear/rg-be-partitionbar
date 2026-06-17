@@ -1,0 +1,47 @@
+<?php
+/**
+ * Страница "Список разделов".
+ * 
+ * Локализации по умолчанию.
+ * 
+ * Этот файл является частью модуля веб-приложения RosGear.
+ * 
+ * @copyright Copyright (c) 2015 RosGear
+ * @license https://rosgear.ru/license/
+ */
+?>
+<article>
+    <h1>List of partitions</h1>
+    <div class="g-help-screen g-help-screen--hidable">
+        <img src="<?= $assetsUrl, '/help/grid.png' ?>" />
+    </div>
+    <p>The list displays all partitions of the partition bar.</p>
+    <h2>List columns</h2>
+    <ul class="g-help-list">
+        <li><b>Index.</b> The index number of the partition in the list. Used to order partitions in the partition bar;</li>
+        <li><b>Name.</b> Partition name;</li>
+        <li><b>Name (current language).</b> Partition name for the current language;</li>
+        <li><b>Icon / Image.</b> Icon (Font Awesome font) or image (URL) of the partition;</li>
+        <li><b>Code.</b> Unique code for each partition. Used to determine the partition identifier.;</li>
+        <li><b>User roles.</b> User roles for which partitions will be available;</li>
+        <li><b>Modules.</b> Modules that will be displayed in partitions;</li>
+        <li><b>Extensions.</b> Extensions of modules that will be displayed in partitions;</li>
+        <li><b>Count.</b> Number of partitions in a partition;</li>
+        <li><b>Visible.</b> Show or hide partition.</li>
+    </ul>
+
+    <h2>Toolbar</h2>
+    <ul class="g-help-list">
+        <li><img class="g-help-icon" src="<?= $assetsUrl, '/images/icon-add.svg' ?>" /> <b>Add.</b> Show a form to add a partition;</li>
+        <li><img class="g-help-icon" src="<?= $assetsUrl, '/images/icon-delete.svg' ?>" /> <b>Delete.</b> Deletes the selected partition entries;</li>
+        <li><img class="g-help-icon" src="<?= $themeUrl, '/assets/icons/svg/basic/cleanup.svg' ?>" /> <b>Clear.</b> Deletes all partition entries;</li>
+        <li><img class="g-help-icon" src="<?= $themeUrl, '/widgets/images/grid/grid-edit.svg' ?>" /> <b>Edit.</b> Show a form for editing a partition record;</li>
+        <li><img class="g-help-icon" src="<?= $themeUrl, '/widgets/images/grid/grid-select.svg' ?>" /> <b>Select.</b> Selects or deselects partition entries;</li>
+        <li><img class="g-help-icon" src="<?= $themeUrl, '/assets/icons/svg/basic/refresh.svg' ?>" /> <b>Refresh.</b> Refreshes the list of records;</li>
+        <li><img class="g-help-icon" src="<?= $themeUrl, '/widgets/images/grid/grid-profiling-off.svg' ?>" /> <b>Record profiling.</b> Expands or collapses the Navigation Bar to display information about the selected item record;</li>
+        <li><img class="g-help-icon" src="<?= $themeUrl, '/widgets/images/grid/grid-toggle-columns-off.svg' ?>" /> <b>Show.</b> Shows hidden columns;</li>
+        <li><img class="g-help-icon" src="<?= $themeUrl, '/assets/icons/svg/basic/help.svg' ?>" /> <b>Help.</b> Show the help window for the current list.;</li>
+        <li><img class="g-help-icon" src="<?= $themeUrl, '/assets/icons/svg/basic/search.svg' ?>" /> <b>Search.</b> Show the form for searching records in the list.</li>
+        <li><img class="g-help-icon" src="<?= $themeUrl, '/assets/icons/svg/basic/filter.svg' ?>" /> <b>Filter.</b> Show a form for filtering records in a list.</li>
+    </ul>
+</article>
