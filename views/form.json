@@ -1,0 +1,189 @@
+[
+    {
+        "xtype": "spinnerfield",
+        "minValue": "1",
+        "emptyText": "1",
+        "width": 165,
+        "name": "itemIndex",
+        "fieldLabel": "#Index",
+        "tooltip": "#Index number"
+    },
+    {
+        "xtype": "textfield",
+        "fieldLabel": "#Name",
+        "name": "name",
+        "allowBlank": false,
+        "anchor": "100%"
+    },
+    {
+        "xtype": "g-field-combobox",
+        "fieldLabel": "#Partition belongs",
+        "name": "parentId",
+        "hiddenName": "parentId",
+        "store": {
+            "fields": ["id", "name"],
+            "proxy": {
+                "type": "ajax",
+                "url": ["@backend/partitionbar/trigger/combo"],
+                "extraParams": {"combo": "parentPartition"},
+                "reader": {
+                    "type": "json",
+                    "rootProperty": "data"
+                }
+            }
+        },
+        "displayField": "name",
+        "valueField": "id",
+        "minChars": 3,
+        "queryParam": "q",
+        "queryMode": "remote",
+        "width": "100%",
+        "allowBlank": false,
+        "editable": false
+    },
+    {
+        "xtype": "checkbox",
+        "ui": "switch",
+        "fieldLabel": "#visible",
+        "checked": true,
+        "name": "isVisible",
+        "inputValue": 1
+    },
+    {
+        "xtype": "label",
+        "ui": "header-line",
+        "text": "#Icon"
+    },
+    {
+        "xtype": "radio",
+        "boxLabel": "#Font glyph",
+        "id": "rg-partitionbar-form__rfont",
+        "name": "iconType",
+        "inputValue": "font",
+        "checked": true,
+        "listeners": { "change": "onCheckIcon"}
+    },
+    {
+        "xtype": "g-field-combobox",
+        "cls": "g-combo-fontawesome",
+        "id": "rg-partitionbar-form__ffont",
+        "name": "input-font",
+        "hiddenName": "input-font",
+        "store": {
+            "fields": ["id", "name", "icon", "style"],
+            "data": "@iconStoreData"
+        },
+        "forceSelection": true,
+        "displayField": "name",
+        "valueField": "id",
+        "queryMode": "local",
+        "typeAhead": true,
+        "editable": true,
+        "anchor": "100%",
+        "tpl": [
+            "<ul class=\"x-list-plain\">",
+                "<tpl for=\".\">",
+                    "<li role=\"option\" class=\"x-boundlist-item rg-partitionbar__boundlist-icon font-icon\">{icon} {name} <span>({style})</span></li>",
+                "</tpl>",
+            "</ul>"
+        ]
+    }, 
+    {
+        "xtype": "radio",
+        "boxLabel": "#Code glyph",
+        "id": "rg-partitionbar-form__rglyph",
+        "name": "iconType",
+        "inputValue": "glyph",
+        "listeners": { "change": "onCheckIcon"}
+    },
+    {
+        "xtype": "textfield",
+        "id": "rg-partitionbar-form__fglyph",
+        "name": "input-glyph",
+        "hidden": true,
+        "width": "120"
+    },
+    {
+        "xtype": "radio",
+        "boxLabel": "#Image",
+        "id": "rg-partitionbar-form__ricon",
+        "name": "iconType",
+        "inputValue": "icon",
+        "listeners": { "change": "onCheckIcon"}
+    },
+    {
+        "xtype": "textfield",
+        "id": "rg-partitionbar-form__ficon",
+        "name": "input-icon",
+        "hidden": true,
+        "anchor": "100%"
+    },
+    {
+        "xtype": "radio",
+        "boxLabel": "#CSS-class",
+        "id": "rg-partitionbar-form__rcss",
+        "name": "iconType",
+        "inputValue": "css",
+        "listeners": { "change": "onCheckIcon"}
+    },
+    {
+        "xtype": "g-field-combobox",
+        "cls": "g-combo-fontawesome",
+        "id": "rg-partitionbar-form__fcss",
+        "name": "input-css",
+        "hiddenName": "input-css",
+        "store": {
+            "fields": ["id", "name", "icon", "style"],
+            "data": "@iconStoreData"
+        },
+        "forceSelection": true,
+        "displayField": "name",
+        "valueField": "id",
+        "queryMode": "local",
+        "typeAhead": true,
+        "editable": true,
+        "hidden": true,
+        "anchor": "100%",
+        "tpl": [
+            "<ul class=\"x-list-plain\">",
+                "<tpl for=\".\">",
+                    "<li role=\"option\" class=\"x-boundlist-item rg-partitionbar__boundlist-icon font-icon\">{icon} {name} <span>({style})</span></li>",
+                "</tpl>",
+            "</ul>"
+        ]
+    },
+    {
+        "xtype": "radio",
+        "boxLabel": "#FCSS-class",
+        "id": "rg-partitionbar-form__rfcss",
+        "name": "iconType",
+        "inputValue": "fcss",
+        "listeners": { "change": "onCheckIcon"}
+    }, 
+    {
+        "xtype": "g-field-combobox",
+        "cls": "g-combo-fontawesome",
+        "id": "rg-partitionbar-form__ffcss",
+        "name": "input-fcss",
+        "hiddenName": "input-fcss",
+        "store": {
+            "fields": ["id", "name", "icon", "style"],
+            "data": "@iconStoreData"
+        },
+        "forceSelection": true,
+        "displayField": "name",
+        "valueField": "id",
+        "queryMode": "local",
+        "typeAhead": true,
+        "editable": true,
+        "hidden": true,
+        "anchor": "100%",
+        "tpl": [
+            "<ul class=\"x-list-plain\">",
+                "<tpl for=\".\">",
+                    "<li role=\"option\" class=\"x-boundlist-item rg-partitionbar__boundlist-icon font-icon\">{icon} {name} <span>({style})</span></li>",
+                "</tpl>",
+            "</ul>"
+        ]
+    }
+]
