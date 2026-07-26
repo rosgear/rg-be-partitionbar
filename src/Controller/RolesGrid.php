@@ -41,7 +41,7 @@ class RolesGrid extends DialogGridController
     /**
      * {@inheritdoc}
      */
-    public function translateAction(mixed $params, string $default = null): ?string
+    public function translateAction(mixed $params, ?string $default = null): ?string
     {
         switch ($this->actionName) {
             // вывод интерфейса
@@ -102,7 +102,7 @@ class RolesGrid extends DialogGridController
         if ($partition === null) {
             $this->getResponse()
                 ->meta->error(Ge::t(BACKEND, 'Invalid argument "{0}"', ['ID']));
-            return false;
+            return parent::createWidget();
         }
 
         // информацию в хранилище модуля

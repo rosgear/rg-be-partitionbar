@@ -116,7 +116,7 @@ class ExtensionsGridRow extends FormModel
     /**
      * {@inheritdoc}
      */
-    protected function insertProcess(array $attributes = null): false|int|string
+    protected function insertProcess(?array $attributes = null): false|int|string
     {
         if (!$this->beforeSave(true))
             return false;
