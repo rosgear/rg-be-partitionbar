@@ -76,7 +76,7 @@ class PartitionbarModule extends ActiveRecord
      *     разделов для текущей роли пользователя (по умолчанию `true`).
      */
     public function fetchAll(
-        string $fetchKey = null, 
+        ?string $fetchKey = null, 
         array $columns = ['*'], 
         Where|Closure|string|array|null $where = null, 
         string|array|null $order = null,
@@ -151,9 +151,8 @@ class PartitionbarModule extends ActiveRecord
                 }
             } else
                 return $rows;
-        } else {
-            return $toString ? implode(',', $rows) : $rows;
         }
+        return $toString ? implode(',', $rows) : $rows;
     }
 
     /**
@@ -195,9 +194,8 @@ class PartitionbarModule extends ActiveRecord
             foreach ($rows as $id => &$modules) {
                 $modules = implode(',', $modules);
             }
-        } else {
-            return $toString ? implode(',', $rows) : $rows;
         }
+        return $toString ? implode(',', $rows) : $rows;
     }
 
 
