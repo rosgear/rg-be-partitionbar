@@ -12,8 +12,8 @@
 return [
     'name'        => 'Partition Bar',
     'description' => 'Grouped components by functionality into Partition Bars',
-    'version'     => '1.0',
-    'versionDate' => '01-07-2015',
+    'version'     => '1.0.1',
+    'versionDate' => '28-09-2026',
     'author'      => 'RosGear',
     'authorUrl'   => 'https://rosgear.ru/',
     'email'       => 'info@rosgear.ru',
